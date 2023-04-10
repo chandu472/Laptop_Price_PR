@@ -122,10 +122,10 @@ def disk_type(diskdrive_type):
 
 type_of_diskdrive = disk_type(diskdrive_type)
 
-size_in_inches = st.number_input('Size of the laptop in Inches', step=0.1, min_value=10.0)
+size_in_inches = 14
 
-graphic_card = st.radio("Graphic Card (0-No,1-Yes)", options=[0, 1])
-touchscreen  = st.radio("Touchscreen (0-No,1-Yes)", options=[0, 1])
+graphic_card = 1
+touchscreen  = 0
 
 features=[company_of_laptop,name_of_the_processor,type_of_the_processor,generation,ram_in_gb,ddr_version,type_of_os,type_of_diskdrive, size_in_inches,graphic_card,touchscreen]
 final_features = np.array(features).reshape(1, -1)
@@ -135,4 +135,3 @@ if st.button('Predict'):
     st.balloons()
     #st.success(f'Your predicted price of the laptop is {round(prediction[0],3)}')
     st.success(f'Your predicted price of the laptop is {prediction[0]}')
-
